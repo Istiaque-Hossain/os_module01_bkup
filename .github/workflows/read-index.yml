@@ -1,0 +1,19 @@
+name: Read index.html
+
+on:
+  push:
+    branches:
+      - main   # Trigger workflow only on pushes to main branch
+
+jobs:
+  read-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Read and output index.html content
+      - name: Show index.html content
+        run: cat index.html
